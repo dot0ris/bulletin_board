@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>{{ post[1] }}</h2>
+    <p>{{ post[2] }}</p>
+    <p>by {{ post[3] }}</p>
+
+    <h3>Comments</h3>
+    <ul>
+        {% for comment in comments %}
+            <li>{{ comment[1] }}: {{ comment[0] }}</li>
+        {% endfor %}
+    </ul>
+
+    {% if session['username'] %}
+        <form method="post">
+            <label for="content">Add Comment</label>
+            <textarea name="content" required></textarea>
+            <button type="submit">Add Comment</button>
+        </form>
+    {% else %}
+        <p><a href="{{ url_for('login') }}">Login</a> to add a comment.</p>
+    {% endif %}
+{% endblock %}
+``
