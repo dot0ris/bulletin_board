@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flask Board</title>
+    <title>My Board</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <header>
-        <h1><a href="{{ url_for('index') }}">Flask Board</a></h1>
+        <h1><a href="{{ url_for('index') }}">My Board</a></h1>
         <nav>
             {% if session['username'] %}
                 <span>Welcome, {{ session['username'] }}!</span>
